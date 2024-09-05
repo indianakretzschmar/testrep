@@ -1,0 +1,1 @@
+This is a repository for all of my homework and labs for the semester. It is a convenient place to store all of my work in this class. The subdirectory structure is made up of a homework section with all of the files underneath, and a Labs section right below. 
