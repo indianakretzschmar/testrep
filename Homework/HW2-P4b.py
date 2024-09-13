@@ -31,7 +31,7 @@ for i in range(1, 11):  # Plot 10 curves
     x = R * (1 + delta_r * np.sin(f * theta + p)) * np.cos(theta)
     y = R * (1 + delta_r * np.sin(f * theta + p)) * np.sin(theta)
 
-    plt.plot(x, y, label=f'Curve {i}')
+    plt.plot(x, y)
     
 plt.gca().set_aspect('equal', adjustable='box')  # Make sure the axes have the same scale
 plt.title("Wavy Circles with varying R, δr, f, and random p")
