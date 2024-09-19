@@ -1,4 +1,5 @@
 import numpy as np
+
 def fun(x):
     y=np.e**(x)
     print(y-1)
@@ -6,3 +7,4 @@ def fun(x):
 
 x=9.999999995000000*10**(-10)
 fun(x)
+
