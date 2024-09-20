@@ -1,13 +1,16 @@
 import numpy as np
 
-x = 9.999999995000000e-10  # Your small x value
-result_expm1 = np.expm1(x)  # Using numpy's expm1 function
-print(f"Result using numpy.expm1: {result_expm1}")
+x = 9.999999995000000e-10 
 
-# Taylor series approximation for f(x) = e^x - 1
+#using numpys expm1 function
+result_expm1 = np.expm1(x) 
+print(f"Result using expm1: {result_expm1}")
+
+#taylor series approximation 
 taylor_approx = x + (x**2 / 2) + (x**3 / 6) 
-print(f"Result using Taylor series approximation: {taylor_approx}")
+print(f"Result using Taylor series: {taylor_approx}")
 
+#finding next term for double check
 next_term = (x**3) / 6 
-print(f"Size of the next term in the Taylor series: {next_term}")
+print(f"Size of term: {next_term}")
 
