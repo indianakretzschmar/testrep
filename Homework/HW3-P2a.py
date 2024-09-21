@@ -2,12 +2,11 @@ import numpy as np
 
 def driver():
 
-    # use routine for x^3 + x - 4
     f = lambda x:  x**9 - 45*x**8 + 1260*x**7 - 17640*x**6 + 137214*x**5 - 615084*x**4 + 1640250*x**3 - 2460375*x**2 + 1953125*x - 781250
-
-    a = 1
-    b = 4
-    tol = 1e-3
+    #f = lambda x: (x-5)**9
+    a = 4.82
+    b = 5.2
+    tol = 1e-4
 
     [astar, ier, count] = bisection(f, a, b, tol)
     print('The approximate root is:', astar)
