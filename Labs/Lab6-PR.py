@@ -5,7 +5,7 @@ f = lambda x: np.cos(x)
 f_prime_exact = lambda x: -np.sin(x)
 
 # The point where we approximate the derivative
-s = 0
+s = np.pi / 2
 
 # Generate values of h
 h_values = 0.01 * 2.0 ** (-np.arange(0, 10))
@@ -33,8 +33,8 @@ error_forward = np.abs(forward_diff - exact_derivative)
 error_centered = np.abs(centered_diff - exact_derivative)
 
 # Plot errors on a log-log plot
-plt.loglog(h_values, error_forward, label="Forward Difference Error", marker='o')
-plt.loglog(h_values, error_centered, label="Centered Difference Error", marker='x')
+plt.plot(h_values, error_forward, label="Forward Difference Error", marker='o')
+plt.plot(h_values, error_centered, label="Centered Difference Error", marker='x')
 
 # Add labels and legend
 plt.xlabel("h")
