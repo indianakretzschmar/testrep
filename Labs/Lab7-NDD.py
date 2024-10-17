@@ -78,3 +78,7 @@ def plot_newton(N):
     plt.show()
 
 plot_newton(5)
+
+
+
+

@@ -4,7 +4,6 @@ import numpy as np
 import math
 from numpy.linalg import inv 
 from numpy.linalg import norm
-import time
 
 
 def driver():
@@ -33,7 +32,7 @@ def NewtonMethod(x0, tol=1e-6, Nmax=100):
     for its in range(Nmax):
         F_val = evalF(x)
         J_val = evalJ(x)
-        
+
         # Solve for Newton step
         try:
             delta_x = np.linalg.solve(J_val, -F_val)
