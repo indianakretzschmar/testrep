@@ -37,7 +37,7 @@ def plot_interpolation(N):
     c, x_i, y_i = interpolate_polynomial(N)
     
     # Plot the original points
-    plt.plot(x_i, y_i, 'o', label="Data points")
+    #plt.plot(x_i, y_i, 'o', label="Data points")
 
     # Create a finer grid for plotting the polynomial and the original function
     x_fine = np.linspace(-1, 1, 1001)
@@ -47,8 +47,10 @@ def plot_interpolation(N):
     p_fine = evaluate_polynomial(c, x_fine)
 
     # Plot the polynomial and the original function
-    plt.plot(x_fine, p_fine, label=f"Interpolating polynomial (N={N})")
-    plt.plot(x_fine, f_fine, '--', label="Original function f(x)")
+    plt.plot(x_fine, p_fine, 'o',  label=f"Interpolating polynomial (N={N})")
+    plt.plot(x_fine, p_fine, '--')
+
+    plt.plot(x_fine, f_fine, 'o', label="Original function f(x)")
 
     # Plot settings
     plt.title(f"Polynomial Interpolation with N={N}")
@@ -59,5 +61,5 @@ def plot_interpolation(N):
     plt.show()
 
 # Test different values of N
-for N in range(2, 21):  # Trying values from N=2 to N=20
-    plot_interpolation(N)
+#for N in range(2, 21):  # Trying values from N=2 to N=20
+plot_interpolation(19)

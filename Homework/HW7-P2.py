@@ -45,7 +45,7 @@ def plot_barycentric_interpolation(N):
     x_i, y_i, w = interpolate_barycentric(N)
     
     # Plot the original points
-    plt.plot(x_i, y_i, 'o', label="Data points")
+    #plt.plot(x_i, y_i, 'o', label="Data points")
 
     # Create a finer grid for plotting the polynomial and the original function
     x_fine = np.linspace(-1, 1, 1001)
@@ -55,8 +55,8 @@ def plot_barycentric_interpolation(N):
     p_fine = barycentric_interpolation(x_i, y_i, w, x_fine)
 
     # Plot the polynomial and the original function
-    plt.plot(x_fine, p_fine, label=f"Barycentric polynomial (N={N})")
-    plt.plot(x_fine, f_fine, '--', label="Original function f(x)")
+    plt.plot(x_fine, p_fine,'o', label=f"Barycentric polynomial (N={N})")
+    plt.plot(x_fine, f_fine, 'o', label="Original function f(x)")
 
     # Plot settings
     plt.title(f"Barycentric Interpolation with N={N}")
@@ -66,6 +66,13 @@ def plot_barycentric_interpolation(N):
     plt.grid(True)
     plt.show()
 
+    err = abs(f_fine - p_fine)
+    
+    # Plot the error
+    plt.semilogy(x_fine, err,'o', label='Absolute error')
+    plt.legend()
+    plt.show()
+
 # Test different values of N
-for N in range(2, 21):  # Trying values from N=2 to N=20
-    plot_barycentric_interpolation(N)
+#for N in range(2, 21):  # Trying values from N=2 to N=20
+plot_barycentric_interpolation(19)
