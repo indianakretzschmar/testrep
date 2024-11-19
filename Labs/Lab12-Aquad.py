@@ -55,8 +55,11 @@ def adaptive_simpsons(f, a, b, tol, N=5):
 
 # Adaptive Gaussian Quadrature with interval counter
 def adaptive_gaussian(f, a, b, tol):
+    global interval_count_gauss
+    interval_count_gauss += 1
+    # Use scipy's quad as a substitute for Gaussian quadrature with tolerance
     result, error = spi.quad(f, a, b, epsabs=tol)
-    return result, error
+    return result
 
 import numpy as np
 import scipy.integrate as spi
@@ -67,9 +70,6 @@ import matplotlib.pyplot as plt
 def integrand(x):
     return np.sin(1 / x)
 
-# Parameters
-
-# Parameters
 
 # Parameters
 a = 0.1
