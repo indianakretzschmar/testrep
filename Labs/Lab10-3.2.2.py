@@ -41,6 +41,7 @@ def eval_legendre_expansion(f, a, b, w, n, x):
 def driver():
     # Function to approximate
     #f = lambda x: math.exp(x)
+    # for problem 3.2.3:
     f = lambda x: 1 / (1 + x**2)
     # Interval of interest
     a, b = -1, 1
